@@ -1,0 +1,46 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="GroupAssignmentMAPP.MainPage"
+             BackgroundImageSource="bg.png"> <!--Setting background image-->
+    <ScrollView>
+        <StackLayout>
+            <Frame BackgroundColor="Black" Padding="0,20,0,20">
+                <Label Text="Welcome to Pizza 4 Life" FontSize="Large" FontAttributes="Bold" HorizontalTextAlignment="Center" TextColor="White"/>
+            </Frame>
+            <StackLayout Orientation="Horizontal" HorizontalOptions="CenterAndExpand" Padding="0,20,0,20">
+                <Entry x:Name="txtSearch" BackgroundColor="DarkGray" PlaceholderColor="DimGray" Placeholder="Search Pizzas!                           " />
+                <Button Text="Search" x:Name="btnSearch" Clicked="btnSearch_Clicked"/>
+            </StackLayout>
+            
+            <ListView x:Name="MyListView" ItemSelected="MyListView_ItemSelected" HeightRequest="200" RowHeight="50" HasUnevenRows="true">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <Frame BorderColor="Black" BackgroundColor="Gray" CornerRadius="5" Padding="10">
+                                <StackLayout Orientation="Horizontal" HorizontalOptions="Fill">
+                                    <!--Displaying Pizza Details-->
+                                    <Image Source="{Binding Image}" HorizontalOptions="Start" AbsoluteLayout.LayoutBounds="0, 0, 400, 50" Aspect="AspectFill"/>
+                                    <StackLayout>
+                                        <Label FontAttributes="Bold" FontSize="18" Text="{Binding Name}" TextColor="White" Padding="5,20,0,20"/>
+                                        <BoxView Color="White" HeightRequest="1" HorizontalOptions="Fill" />
+                                        <Label FontSize="14" Text="{Binding Ingredients}" TextColor="White" Padding="0,20,0,0"/>
+                                    </StackLayout>
+                                </StackLayout>
+                            </Frame>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+            <StackLayout Grid.Row="1" Orientation="Horizontal" VerticalOptions="End" Padding="0,5,0,5">
+                <!--Buttons for various operations-->
+                <Button x:Name="btnAccount" HorizontalOptions="StartAndExpand" Text="Account" Clicked="btnAccount_Clicked"/>
+                <Button x:Name="btnLogout" HorizontalOptions="StartAndExpand" Text="Logout" Clicked="btnLogout_Clicked"/>
+                <Button x:Name="btnViewCart" HorizontalOptions="EndAndExpand" Text="View Cart" Clicked="btnViewCart_Clicked"/>
+            </StackLayout>
+        </StackLayout>
+    </ScrollView>
+</ContentPage>
+
+
+

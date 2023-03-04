@@ -1,0 +1,76 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="GroupAssignmentMAPP.PizzaDetail"
+             BackgroundImageSource="bg2.png"> <!--Setting background image-->
+
+    <NavigationPage.TitleView>
+        <!--Adding account button on navigation bar-->
+        <StackLayout Orientation="Horizontal">
+            <Label Text="Selected Pizza"
+                   HorizontalOptions="StartAndExpand"
+                   VerticalOptions="CenterAndExpand"
+                   FontAttributes="Bold"
+                   FontSize="20"
+                   TextColor="White"/>
+            <Button x:Name="btnAbout" 
+                    Text="About" TextColor="White" 
+                    HorizontalOptions="End" 
+                    VerticalOptions="CenterAndExpand" 
+                    Clicked="btnAbout_Clicked"
+                    BackgroundColor="Transparent" 
+                    BorderColor="Transparent"/>
+        </StackLayout>
+    </NavigationPage.TitleView>
+
+    <ContentPage.Content>
+        <ScrollView>
+            <Frame Opacity="0.9" BackgroundColor="Transparent">
+                <StackLayout>
+                    <!--Displaying Pizza Details-->
+                    <StackLayout>
+                        <Image>
+                            <Image.Source>
+                                <FileImageSource x:Name="ImgPizzaImg" File="{Binding Image}" />
+                            </Image.Source>
+                        </Image>
+                    </StackLayout>
+
+                    <Frame BackgroundColor="White" Opacity="1">
+                    <StackLayout>
+                        <StackLayout>
+                            <Label Text="Pizza Name:"/>
+                            <Entry x:Name="txtPizzaName" IsReadOnly="True"/>
+                        </StackLayout>
+                        <StackLayout>
+                            <Label Text="Pizza Price"/>
+                            <Entry x:Name="txtPizzaPrice" IsReadOnly="True"/>
+                        </StackLayout>
+                        <StackLayout>
+                            <Label Text="Pizza Ingredients"/>
+                            <Entry x:Name="txtPizzaIngredients" IsReadOnly="True" />
+                        </StackLayout>
+
+                            <Label Text="Size" />
+                            <Picker x:Name="PkrPizzaSize" Title="Select Pizza Size" TitleColor="Red" PropertyChanged="PkrPizzaSize_PropertyChanged">
+                                <Picker.ItemsSource> <!--Setting Item Source for Size Picker-->
+                                    <x:Array Type="{x:Type x:String}">
+                                        <x:String>Large</x:String>
+                                        <x:String>Medium</x:String>
+                                        <x:String>Small</x:String>
+                                    </x:Array>
+                                </Picker.ItemsSource>
+                            </Picker>
+                        </StackLayout>
+                    </Frame>
+                    <StackLayout VerticalOptions="EndAndExpand">
+                        <Button Text="Add to Cart" x:Name="btnAddToCart" Clicked="btnAddToCart_Clicked" BackgroundColor="Green" TextColor="White" />
+                        <Button Text="Cancel" x:Name="btnCancel" Clicked="btnCancel_Clicked" BackgroundColor="Red" TextColor="White"/>
+                    </StackLayout>
+            
+                </StackLayout>
+            </Frame>
+        </ScrollView>
+
+    </ContentPage.Content>
+</ContentPage>

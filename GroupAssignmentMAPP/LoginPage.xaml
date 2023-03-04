@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="GroupAssignmentMAPP.LoginPage"
+             BackgroundImageSource="bg2.png">
+    <NavigationPage.TitleView> <!--About button in Navbar-->
+        <Button x:Name="btnAbout" Text="About" TextColor="White" HorizontalOptions="End" BackgroundColor="Transparent" BorderColor="Transparent" Clicked="btnAbout_Clicked"/>
+    </NavigationPage.TitleView>
+    <ContentPage.Content>
+        <ScrollView HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand">
+            <Frame BackgroundColor="White" Opacity="0.9">
+            <StackLayout>
+                <Entry  Placeholder="Enter Email" x:Name="txtEmail" Keyboard="Default"/>
+                <Entry  Placeholder="Enter Password" IsPassword="True" x:Name="txtPassword" Keyboard="Default"/> <!--Not showing password in password field-->
+                <Button Text="Login" x:Name="btnLogin" Clicked="btnLogin_Clicked"/> <!--Login Button-->
+            </StackLayout>
+            </Frame>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

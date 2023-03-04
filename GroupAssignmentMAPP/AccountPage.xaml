@@ -1,0 +1,64 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="GroupAssignmentMAPP.AccountPage"
+             BackgroundImageSource="bg2.png">
+    <NavigationPage.TitleView>
+        <Button x:Name="btnAbout" Text="About" TextColor="White" HorizontalOptions="End" BackgroundColor="Transparent" BorderColor="Transparent" Clicked="btnAbout_Clicked"/>
+    </NavigationPage.TitleView>
+    <ContentPage.Content>
+        <ScrollView>
+
+            <StackLayout Padding="0,20,0,0">
+                    
+                    <Label Text="Person Info" FontAttributes="Bold" HorizontalOptions="Center" TextDecorations="Underline" FontSize="30"/>
+                    
+                <Frame BackgroundColor="White" Opacity="0.9">
+                    <StackLayout>
+                        <StackLayout Orientation="Horizontal">
+                            <Label Text="First Name:" VerticalOptions="Center"/>
+                            <Entry Text="{Binding Firstname, Mode=TwoWay}" x:Name="txtFirstname" HorizontalOptions="FillAndExpand" VerticalOptions="Center"/>
+                        </StackLayout>
+                    
+                        <StackLayout Orientation="Horizontal">
+                            <Label Text="Surname:" VerticalOptions="Center"/>
+                            <Entry Text="{Binding Surname, Mode=TwoWay}" x:Name="txtSurname" HorizontalOptions="FillAndExpand" VerticalOptions="Center"/>
+                        </StackLayout>
+                    
+                        <StackLayout Orientation="Horizontal">
+                            <Label Text="Address:" VerticalOptions="Center"/>
+                            <Entry Text="{Binding Address, Mode=TwoWay}" x:Name="txtAddress" HorizontalOptions="FillAndExpand" VerticalOptions="Center"/>
+                        </StackLayout>
+                    
+                        <StackLayout Orientation="Horizontal">
+                            <Label Text="Contact Number:" VerticalOptions="Center"/>
+                            <Entry Text="{Binding ContactNumber, Mode=TwoWay}" x:Name="txtContactNumber" HorizontalOptions="FillAndExpand" VerticalOptions="Center" Keyboard="Telephone"/>
+                        </StackLayout>
+                    
+                        <StackLayout Orientation="Horizontal">
+                            <Label Text="Password:" VerticalOptions="Center"/>
+                            <Entry Text="{Binding Password, Mode=TwoWay}" x:Name="txtPassword" HorizontalOptions="FillAndExpand" VerticalOptions="Center" IsPassword="True"/>
+                        </StackLayout>
+                    
+                        <StackLayout Orientation="Horizontal">
+                            <Label Text="Confirm Passsword:" VerticalOptions="Center"/>
+                            <Entry Text="{Binding Password, Mode=TwoWay}" x:Name="txtConfirmPassword" HorizontalOptions="FillAndExpand" VerticalOptions="Center" IsPassword="True"/>
+                        </StackLayout>
+                    
+                        <StackLayout Orientation="Horizontal">
+                            <Label Text="Email:" VerticalOptions="Center"/>
+                            <Entry Text="{Binding Email, Mode=TwoWay}" x:Name="txtEmail" HorizontalOptions="FillAndExpand" VerticalOptions="Center" Keyboard="Email"/>
+                        </StackLayout>
+                    </StackLayout>
+                </Frame>
+
+                    <StackLayout VerticalOptions="EndAndExpand">
+                        <Button x:Name="btnRegister" Text="Register" HorizontalOptions="FillAndExpand" TextColor="DodgerBlue" Clicked="btnRegister_Clicked"></Button>
+                        <Button x:Name="btnLogin" Text="Login" HorizontalOptions="FillAndExpand" TextColor="ForestGreen" Clicked="btnLogin_Clicked"></Button>
+                    </StackLayout>
+                    
+                </StackLayout>
+            
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

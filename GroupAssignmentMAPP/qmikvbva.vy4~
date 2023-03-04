@@ -1,0 +1,53 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+using Xamarin.Forms;
+using Xamarin.Forms.Xaml;
+
+namespace GroupAssignmentMAPP
+{
+	[XamlCompilation(XamlCompilationOptions.Compile)]
+	public partial class CartUpdatePage : ContentPage
+	{
+		App app = (App)Application.Current;
+		public CartUpdatePage()
+		{
+			InitializeComponent();
+		}
+
+		private async void btnAbout_Clicked(object sender, EventArgs e)
+		{
+			await Navigation.PushAsync(new AccountPage()); //Navigation
+		}
+
+		private void PkrPizzaSize_PropertyChanged(object sender, System.ComponentModel.PropertyChangedEventArgs e)
+		{
+			if (PkrPizzaSize.SelectedIndex == 0)
+			{
+				txtPizzaPrice.Text = app.ActivePizza.Price.ToString("0.00"); //Formatting Price
+			}
+			if (PkrPizzaSize.SelectedIndex == 1)
+			{
+				txtPizzaPrice.Text = (app.ActivePizza.Price * 0.8).ToString("0.00"); //Formatting Price and adding discount since pizza size is Medium
+			}
+			if (PkrPizzaSize.SelectedIndex == 2)
+			{
+				txtPizzaPrice.Text = (app.ActivePizza.Price * 0.6).ToString("0.00"); //Formatting Price and adding discount since pizza size is Small
+			}
+		}
+
+		private void btnUpdate_Clicked(object sender, EventArgs e)
+		{
+			app.ActivePizza.Price = Convert.ToDouble(txtPizzaPrice.Text);
+			app.cart.RemoveAt(app.ActivePizza.ID);
+		}
+
+		private void btnRemove_Clicked(object sender, EventArgs e)
+		{
+
+		}
+	}
+}

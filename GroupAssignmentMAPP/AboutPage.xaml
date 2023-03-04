@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="GroupAssignmentMAPP.AboutPage"
+             BackgroundImageSource="bg2.png">
+    <ContentPage.Content>
+        <StackLayout HorizontalOptions="CenterAndExpand" Margin="20,50,20,20" Spacing="50">
+            <Frame BackgroundColor="Gray" Opacity="0.9" HorizontalOptions="Center" VerticalOptions="Center">
+                <StackLayout>
+                        <Label Margin="17,8" TextColor="White" Text="Pizza 4 Life" FontSize="50" HorizontalOptions="Center"/>
+                        <Image Margin="0,0,0,0" HeightRequest="150" Source="splash.png" WidthRequest="100"/>
+                        <Label Margin="17,8" TextColor="White" FontSize="Medium" Text="Buckingham's Pizza Restaurant where you can order food from your mobile device with ease." HorizontalTextAlignment="Center" />
+                        <Label Margin="0,70,0,0" TextColor="White" FontSize="Medium" Text="Created By: Avin Alwis, Thomas Humphreys and Yoon Cho" HorizontalTextAlignment="Center" />
+                    </StackLayout>
+            </Frame>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

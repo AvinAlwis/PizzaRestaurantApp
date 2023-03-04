@@ -1,0 +1,64 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<TabbedPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="GroupAssignmentMAPP.CheckoutNew"
+            BackgroundImageSource="bg2.png"> <!--Setting Background Image-->
+    <NavigationPage.TitleView>
+        <Button x:Name="btnAbout" Text="About" TextColor="White" HorizontalOptions="End" BackgroundColor="Transparent" BorderColor="Transparent" Clicked="btnAbout_Clicked"/>
+    </NavigationPage.TitleView>
+    <!--Pages can be added as references or inline-->
+    <ContentPage Title="Delivery" BackgroundImageSource="bg2.png"> <!--Adding background image-->
+        <ScrollView> <!--Enabling scroll-->
+            <Frame BackgroundColor="White" Opacity="0.95">
+                <StackLayout Padding="0,20,0,0"> <!--Data input items-->
+                    <Label x:Name="lblDel" Text="Please Enter Details" FontAttributes="Bold" HorizontalOptions="Center" />
+                    <StackLayout Orientation="Horizontal">
+                        <Label x:Name="lblFN" Text="First Name:" VerticalOptions="Center"/>
+                        <Entry Text="{Binding Firstname, Mode=TwoWay}" x:Name="txtFirstname" HorizontalOptions="FillAndExpand" VerticalOptions="Center"/>
+                    </StackLayout>
+                    <StackLayout Orientation="Horizontal">
+                        <Label x:Name="lblSN" Text="Surname:" VerticalOptions="Center"/>
+                        <Entry Text="{Binding Surname, Mode=TwoWay}" x:Name="txtSurname" HorizontalOptions="FillAndExpand" VerticalOptions="Center"/>
+                    </StackLayout>
+                    <StackLayout Orientation="Horizontal">
+                        <Label x:Name="lblAdd" Text="Address:" VerticalOptions="Center"/>
+                        <Entry Text="{Binding Address, Mode=TwoWay}" x:Name="txtAddress" HorizontalOptions="FillAndExpand" VerticalOptions="Center"/>
+                    </StackLayout>
+                    <StackLayout Orientation="Horizontal">
+                        <Label x:Name="lblCN" Text="Contact Number:" VerticalOptions="Center"/>
+                        <Entry Text="{Binding ContactNumber, Mode=TwoWay}" x:Name="txtContactNumber" HorizontalOptions="FillAndExpand" VerticalOptions="Center" Keyboard="Telephone"/>
+                    </StackLayout>
+                    <StackLayout Orientation="Horizontal">
+                        <Label x:Name="lblEmail" Text="Email:" VerticalOptions="Center"/>
+                        <Entry Text="{Binding Email, Mode=TwoWay}" x:Name="txtEmail" HorizontalOptions="FillAndExpand" VerticalOptions="Center" Keyboard="Email"/>
+                    </StackLayout>
+                    <Button Margin="0,20,0,0" x:Name="btnCheckoutDelivery" Text="Checkout" HorizontalOptions="FillAndExpand" TextColor="White" BackgroundColor="Green" BorderColor="Black" BorderWidth="3" Clicked="btnCheckoutDelivery_Clicked"></Button>
+                    <StackLayout Padding="0,20,0,0" Orientation="Horizontal">
+                    </StackLayout>
+                </StackLayout>
+            </Frame>
+        </ScrollView>
+    </ContentPage>
+    <ContentPage Title="Takeaway" BackgroundImageSource="bg2.png"> <!--Adding background image-->
+        <ScrollView> <!--Enabling scroll-->
+            <Frame BackgroundColor="White" Opacity="0.95">
+                <StackLayout Padding="0,20,0,0"> <!--Data input items-->
+                    <Label x:Name="lblDel2" Text="Please Enter Details" FontAttributes="Bold" HorizontalOptions="Center" />
+                    <StackLayout Orientation="Horizontal">
+                        <Label x:Name="lblFN2" Text="First Name:" VerticalOptions="Center"/>
+                        <Entry Text="{Binding Firstname, Mode=TwoWay}" x:Name="txtFirstname2" HorizontalOptions="FillAndExpand" VerticalOptions="Center"/>
+                    </StackLayout>
+                    <StackLayout Orientation="Horizontal">
+                        <Label x:Name="lblSN2" Text="Surname:" VerticalOptions="Center"/>
+                        <Entry Text="{Binding Surname, Mode=TwoWay}" x:Name="txtSurname2" HorizontalOptions="FillAndExpand" VerticalOptions="Center"/>
+                    </StackLayout>
+                    <StackLayout Orientation="Horizontal">
+                        <Label x:Name="lblEmail2" Text="Email:" VerticalOptions="Center"/>
+                        <Entry Text="{Binding Email, Mode=TwoWay}" x:Name="txtEmail2" HorizontalOptions="FillAndExpand" VerticalOptions="Center" Keyboard="Email"/>
+                    </StackLayout>
+                    <Button Margin="0,20,0,0" x:Name="btnCheckoutTakeaway" Text="Checkout" HorizontalOptions="FillAndExpand" TextColor="White" BackgroundColor="Green" BorderColor="Black" BorderWidth="3" Clicked="btnCheckoutTakeaway_Clicked"></Button>
+                </StackLayout>
+            </Frame>
+        </ScrollView>
+    </ContentPage>
+</TabbedPage>
